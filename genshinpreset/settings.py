@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'updatedb',
+    'accounts',
 
     'crispy_forms',
     'crispy_bootstrap5',
@@ -63,7 +64,7 @@ ROOT_URLCONF = 'genshinpreset.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['genshinpreset/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

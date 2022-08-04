@@ -37,9 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'updatedb',
 
     'crispy_forms',
     'crispy_bootstrap5',
+    'django_extensions',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
@@ -82,7 +84,7 @@ WSGI_APPLICATION = 'genshinpreset.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgres',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'genshindb',
         'USER': 'postgres',
         'PASSWORD': 'KurusoXCV792',

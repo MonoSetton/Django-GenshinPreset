@@ -15,6 +15,9 @@ class Artifact_set(models.Model):
     piece_2 = models.CharField(max_length=100)
     piece_4 = models.TextField()
 
+    def __str__(self):
+        return self.name
+
 
 class Weapons(models.Model):
     name = models.CharField(max_length=50)

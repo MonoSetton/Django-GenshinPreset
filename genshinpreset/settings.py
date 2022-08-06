@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'updatedb',
     'accounts',
+    'presets',
 
     'crispy_forms',
     'crispy_bootstrap5',
@@ -86,10 +87,10 @@ WSGI_APPLICATION = 'genshinpreset.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'genshindb',
-        'USER': 'postgres',
-        'PASSWORD': 'KurusoXCV792',
-        'HOST': 'localhost',
+        'NAME': 'd8rp9gndtb32n2',
+        'USER': 'mttvcgirbrvwec',
+        'PASSWORD': '460a0f4a2f013c6d351452021cd3ef2b98c5f06552843e068c299fd289ab6aae',
+        'HOST': 'ec2-52-48-159-67.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }

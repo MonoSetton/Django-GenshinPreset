@@ -2,7 +2,10 @@
 {% block title %} Home {% endblock %}
 {% block content %}
 
+{% for preset in presets %}
 
+<a href="{% url 'details' preset.id %}">{{ preset.name }}</a>
 
+{% endfor %}
 
 {% endblock %}

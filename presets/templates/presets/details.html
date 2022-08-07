@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Details {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<table class="table">
+  <thead>
+    <tr class="text-center">
+        <th scope="col">Flower</th>
+        <th scope="col">Feather</th>
+        <th scope="col">Sands</th>
+        <th scope="col">Goblet</th>
+        <th scope="col">Circlet</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="text-center">
+        {% for art in artifacts %}
+        <td><a href="{% url 'update_art' art.id %}">{{ art.status }}</a></td>
+        {% endfor %}
+    </tr>
+  <tr class="text-center">
+      {% for art in artifacts %}
+        <td>{{ art.stat }}</td>
+      {% endfor %}
+  </tr>
+  </tbody>
+</table>
+{% endblock %}

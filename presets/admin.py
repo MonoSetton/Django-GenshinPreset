@@ -3,4 +3,7 @@ from .models import Preset, Artifact
 
 reg = [Preset, Artifact]
 
-admin.site.register(reg)
+class ArtAdmin(admin.ModelAdmin):
+    readonly_fields = ('id',)
+
+admin.site.register(reg, ArtAdmin)

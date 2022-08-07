@@ -1,13 +1,21 @@
 from django.shortcuts import render, redirect
-from .forms import PresetForm
+from django.forms import inlineformset_factory
+from .models import *
 
+def update_art(request, pk):
+    PresetFormSet = inlineformset_factory(Preset, Artifact, fields=('stat', 'status',), extra=4, can_delete=False, max_num=5)
+    preset = Preset.objects.get(id=pk)
+    formset = PresetFormSet(instance=preset)
 
-def create_preset(request):
-    form = PresetForm()
     if request.method == 'POST':
-        form = PresetForm(request.POST)
-        if form.is_valid():
-            form.save()
+        formset = PresetFormSet(request.POST, instance=preset)
+        if formset.is_valid():
+            formset.save()
             return redirect('/')
 
-    return render(request, 'presets\create_preset.html', {'form': form})
+    return render(request, 'presets\create_preset.html', {'formset': formset})
+
+
+def details(request, pk):
+    artifacts = Artifact.objects.all()
+    return render(request, 'presets\details.html', {'artifacts': artifacts})

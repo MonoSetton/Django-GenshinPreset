@@ -6,9 +6,7 @@
 <div class="h-30">
     <form method="POST">
         {% csrf_token %}
-        {{ formset.management_form }}
-        {{ formset.as_p }}
-        <input type="submit" value="Create Preset" class="btn btn-primary">
+        {{ formset }}
     </form>
 </div>
 {% endblock %}

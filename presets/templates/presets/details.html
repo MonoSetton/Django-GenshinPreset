@@ -3,6 +3,9 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+        {{ preset }}
+        {{ artifacts }}
+
 <table class="table">
   <thead>
     <tr class="text-center">
@@ -15,18 +18,17 @@
   </thead>
   <tbody>
     <tr class="text-center">
-        <td><a href="">Edit Art</a></td>
-        <td><a href="">Edit Art</a></td>
-        <td><a href="">Edit Art</a></td>
-        <td><a href="">Edit Art</a></td>
-        <td><a href="">Edit Art</a></td>
+        {% for art in artifacts %}
+            <th><a href="{% url 'update_art' art.id %}">{{ art.status }}</a></th>
+        {% endfor %}
     </tr>
   <tr class="text-center">
 
-        <td>stat</td>
+
 
   </tr>
   </tbody>
 </table>
+
 
 {% endblock %}

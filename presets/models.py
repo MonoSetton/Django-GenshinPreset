@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class Preset(models.Model):
-    name = models.CharField(max_length=65, null=True, blank=False, default='Preset')
+    name = models.CharField(max_length=65, null=True, blank=False)
     first_stat = models.CharField(max_length=25, null=True)
     second_stat = models.CharField(max_length=25, null=True)
     third_stat = models.CharField(max_length=25, null=True)
@@ -22,8 +22,9 @@ class Artifact(models.Model):
         ('placeholder', 'placeholder'),
         ('good', 'good'),
     )
+
     set = models.ForeignKey(Artifact_set, on_delete=models.CASCADE, related_name='set')
-    art = models.ForeignKey(Preset, on_delete=models.CASCADE, related_name='art', default=1)
+    preset = models.ForeignKey(Preset, on_delete=models.CASCADE, related_name='preset', default=1)
     main = models.CharField(max_length=25, null=True)
     first = models.CharField(max_length=25, null=True)
     second = models.CharField(max_length=25, null=True)

@@ -6,7 +6,8 @@
 <div class="h-30">
     <form method="POST">
         {% csrf_token %}
-        {{ formset }}
+        {{ formset|crispy }}
+        <button type="submit" class="btn btn-info">Update Art</button>
     </form>
 </div>
 {% endblock %}

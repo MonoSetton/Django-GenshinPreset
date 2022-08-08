@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.forms import inlineformset_factory
-from .forms import PresetForm, ArtifactForm
+from .forms import PresetForm
 from .models import *
 
 

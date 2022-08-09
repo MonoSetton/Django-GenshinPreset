@@ -3,6 +3,11 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
+<div class="text-center">
+    <h2>{{ preset.name }}</h2>
+    {{ preset.character }} | {{ preset.character.vision }} | {{ preset.weapon }}
+</div>
+
 <table class="table">
   <thead>
     <tr class="text-center">
@@ -14,6 +19,11 @@
     </tr>
   </thead>
   <tbody>
+      <tr class="text-center">
+        {% for art in artifacts %}
+            <th>{{ art.set }}</th>
+        {% endfor %}
+    </tr>
     <tr class="text-center">
         {% for art in artifacts %}
             <th>{{ art.main }}</th>

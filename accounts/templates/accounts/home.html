@@ -2,10 +2,30 @@
 {% block title %} Home {% endblock %}
 {% block content %}
 
-{% for preset in presets %}
-    {% if preset.author == user %}
-        <a href="{% url 'details' preset.id %}">{{ preset.name }}</a>
-    {% endif %}
+<br />
+{% for character in characters %}
+    <hr>
+        <p>{{ character }}:</p>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-3">
+        {% for preset in presets %}
+            {% if character == preset.character %}
+                {% if character == preset.character %}
+                    {% if preset.author == user %}
+                        <a href="{% url 'details' preset.id %}" class="text-decoration-none text-reset">
+                            <div class="col">
+                              <div class="card shadow-sm">
+                                <div class="card-body">
+                                  <p class="card-text text-center" >{{ preset.name }}</p>
+                                </div>
+                              </div>
+                            </div>
+                        </a>
+
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </div>
 {% endfor %}
 
 {% endblock %}

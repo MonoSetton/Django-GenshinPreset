@@ -1,6 +1,6 @@
 import csv
 import pandas as pd
-from updatedb.models import Character, Sword, Claymore, Polearm, Catalyst, Bow, Artifact_set
+from updatedb.models import Character, Weapon, Artifact_set
 
 
 types = {
@@ -9,14 +9,6 @@ types = {
     7: 'Polearm',
     8: 'Catalyst',
     9: 'Bow'
-}
-
-classess = {
-    5: Sword,
-    6: Claymore,
-    7: Polearm,
-    8: Catalyst,
-    9: Bow
 }
 
 
@@ -66,11 +58,10 @@ def characters():
 
 
 def weapons():
+    Weapon.objects.all().delete()
     for weapon_type in range(5, 10):
         file = open(f'updatedb/scripts/csvs/{types[weapon_type]}.csv')
         read_file = csv.reader(file)
-
-        classess[weapon_type].objects.all().delete()
 
         count = 1
 
@@ -81,7 +72,7 @@ def weapons():
                 print(item)
                 print("-" * 90)
                 print("\n")
-                classess[weapon_type].objects.create(name=item[1], atk=item[2], stat=item[3], ability=item[4])
+                Weapon.objects.create(name=item[1], type=types[weapon_type], atk=item[2], stat=item[3], ability=item[4])
             count += 1
 
 

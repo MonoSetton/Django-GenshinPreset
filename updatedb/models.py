@@ -19,35 +19,16 @@ class Artifact_set(models.Model):
         return self.name
 
 
-class Weapons(models.Model):
+class Weapon(models.Model):
     name = models.CharField(max_length=50)
+    type = models.CharField(max_length=15)
     atk = models.CharField(max_length=15)
     stat = models.CharField(max_length=50)
     ability = models.TextField()
 
-    class Meta:
-        abstract = True
 
     def __str__(self):
         return self.name
 
 
-class Sword(Weapons):
-    pass
-
-
-class Claymore(Weapons):
-    pass
-
-
-class Polearm(Weapons):
-    pass
-
-
-class Catalyst(Weapons):
-    pass
-
-
-class Bow(Weapons):
-    pass
 

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Character, Artifact_set, Sword, Claymore, Polearm, Catalyst, Bow
+from .models import Character, Artifact_set, Weapon
 
-db_models = [Character, Artifact_set, Sword, Claymore, Polearm, Catalyst, Bow]
+db_models = [Character, Artifact_set, Weapon]
 admin.site.register(db_models)

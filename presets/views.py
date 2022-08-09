@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.forms import inlineformset_factory
 from .forms import PresetForm
 from .models import *
+from updatedb.models import Character
 
 
 def update_art(request, pk):

@@ -1,6 +1,5 @@
 import csv
 import pandas as pd
-import os
 from updatedb.models import Character, Sword, Claymore, Polearm, Catalyst, Bow, Artifact_set
 
 

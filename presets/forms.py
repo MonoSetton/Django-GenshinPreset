@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Preset, Artifact
+from .models import Preset
 
 
 class PresetForm(ModelForm):
@@ -7,7 +7,3 @@ class PresetForm(ModelForm):
         model = Preset
         fields = ['name']
 
-
-
-
-        

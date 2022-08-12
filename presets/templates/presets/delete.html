@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %} Create Preset {% endblock %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+<p>Are you sure you want to delete "{{ preset.name }}" preset?</p>
+
+<form action="{% url 'delete_preset' preset.id %}" method="post">
+    {% csrf_token %}
+    <input type="submit" value="Yes">
+</form>
+
+<a href="{% url 'details' preset.id %}"><button class="btn btn-info">Cancel</button></a>
+
+{% endblock %}

@@ -7,3 +7,8 @@ class PresetForm(ModelForm):
         model = Preset
         fields = ['name', 'character', 'weapon']
 
+
+class PresetUpdateForm(ModelForm):
+    class Meta:
+        model = Preset
+        fields = ['name', 'weapon']

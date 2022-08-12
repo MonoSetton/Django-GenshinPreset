@@ -3,9 +3,13 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<div class="text-center">
+<div class="text-center display-inline">
     <h2>{{ preset.name }}</h2>
-    {{ preset.character }} | {{ preset.character.vision }} | {{ preset.weapon }}
+    {{ preset.character }} | {{ preset.character.vision }}
+        {% if preset.weapon != None %}
+            <p data-toggle="tooltip" data-placement="top" title="{{ preset.weapon.ability }}">{{ preset.weapon }}</p>
+        {% endif %}
+    <p ><a href="{% url 'update_preset' preset.id %}"><button class="btn btn-info">Update Preset</button></a></p>
 </div>
 
 <table class="table">
@@ -21,32 +25,60 @@
   <tbody>
       <tr class="text-center">
         {% for art in artifacts %}
-            <th>{{ art.set }}</th>
+          {% if art.set == None %}
+                <th>No stat provided</th>
+            {% else %}
+            <th>
+                <span data-toggle="tooltip" data-placement="top" title="{{ art.set.piece_2 }}">2 Piece</span><br />
+                {{ art.set }}<br />
+                <span data-toggle="tooltip" data-placement="top" title="{{ art.set.piece_4 }}">4 Piece</span>
+            </th>
+          {% endif %}
         {% endfor %}
     </tr>
     <tr class="text-center">
         {% for art in artifacts %}
-            <th>{{ art.main }}</th>
+            {% if art.main == None %}
+                <td>No stat provided</td>
+            {% else %}
+                <td>{{ art.main }}</td>
+            {% endif %}
         {% endfor %}
     </tr>
     <tr class="text-center">
         {% for art in artifacts %}
-            <th>{{ art.first }}</th>
+            {% if art.first == None %}
+                    <td>No stat provided</td>
+                {% else %}
+                <td>{{ art.first }}</td>
+            {% endif %}
         {% endfor %}
     </tr>
     <tr class="text-center">
         {% for art in artifacts %}
-            <th>{{ art.second }}</th>
+            {% if art.second == None %}
+                    <td>No stat provided</td>
+                {% else %}
+                <td>{{ art.second }}</td>
+            {% endif %}
         {% endfor %}
     </tr>
     <tr class="text-center">
         {% for art in artifacts %}
-            <th>{{ art.third }}</th>
+            {% if art.third == None %}
+                    <td>No stat provided</td>
+                {% else %}
+                <td>{{ art.third }}</td>
+            {% endif %}
         {% endfor %}
     </tr>
     <tr class="text-center">
         {% for art in artifacts %}
-            <th>{{ art.fourth }}</th>
+            {% if art.fourth == None %}
+                    <td>No stat provided</td>
+                {% else %}
+                <td>{{ art.fourth }}</td>
+            {% endif %}
         {% endfor %}
     </tr>
     <tr class="text-center">
@@ -54,13 +86,12 @@
             <th>{{ art.status }}</th>
         {% endfor %}
     </tr>
-  <tr class="text-center">
-
-
-
-  </tr>
   </tbody>
 </table>
-<a href="{% url 'update_art' preset.id %}">Add/Edit arts</a>
+<div class="text-center">
+<a href="{% url 'update_art' preset.id %}"><button class="btn btn-info">Add/Edit arts</button></a>
+<a href="{% url 'delete_preset' preset.id %}"><button class="btn btn-danger">Delete preset</button></a>
+</div>
+
 
 {% endblock %}

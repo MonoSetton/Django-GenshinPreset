@@ -20,7 +20,7 @@ def update_art(request, pk):
 def details(request, pk):
     preset = Preset.objects.get(id=pk)
     artifacts = Artifact.objects.filter(preset=preset)
-    return render(request, 'presets\details.html', {'artifacts': artifacts, 'preset': preset})
+    return render(request, 'presets/details.html', {'artifacts': artifacts, 'preset': preset})
 
 
 def create_preset(request):
@@ -33,7 +33,7 @@ def create_preset(request):
             return redirect('details/' + str(preset.id))
     else:
         form = PresetForm()
-    return render(request, 'presets\create_preset.html', {'form': form})
+    return render(request, 'presets/create_preset.html', {'form': form})
 
 
 def delete_preset(request, pk):
@@ -41,7 +41,7 @@ def delete_preset(request, pk):
     if request.method == 'POST':
         preset.delete()
         return redirect('/')
-    return render(request, 'presets\delete.html', {'preset': preset})
+    return render(request, 'presets/delete.html', {'preset': preset})
 
 
 def update_preset(request, pk):

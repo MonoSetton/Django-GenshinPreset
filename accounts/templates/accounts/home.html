@@ -8,7 +8,7 @@
         <p>{{ character }}:</p>
     <div class="row row-cols-1 row-cols-sm-2 row-cols-md-6 g-3">
         {% for preset in presets %}
-            {% if character == preset.character and character == preset.character and preset.author == user%}
+            {% if character == preset.character%}
                         <a href="{% url 'details' preset.id %}" class="text-decoration-none text-reset">
                             <div class="col">
                               <div class="card shadow-sm">

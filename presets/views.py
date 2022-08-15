@@ -3,6 +3,7 @@ from django.forms import inlineformset_factory
 from .forms import PresetForm, PresetUpdateForm
 from .models import *
 from django.contrib.auth.decorators import login_required
+from django.core.exceptions import BadRequest
 
 
 @login_required(login_url='/login')
@@ -19,10 +20,14 @@ def update_art(request, pk):
     return render(request, 'presets/update_art.html', {'formset': formset})
 
 
+@login_required(login_url='/login')
 def details(request, pk):
     preset = Preset.objects.get(id=pk)
     artifacts = Artifact.objects.filter(preset=preset)
-    return render(request, 'presets/details.html', {'artifacts': artifacts, 'preset': preset})
+    if preset.author == request.user:
+        return render(request, 'presets/details.html', {'artifacts': artifacts, 'preset': preset})
+    else:
+        raise BadRequest("You're not the author of this preset")
 
 
 @login_required(login_url='/login')

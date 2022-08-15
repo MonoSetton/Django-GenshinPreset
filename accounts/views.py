@@ -8,7 +8,7 @@ from updatedb.models import Character
 
 @login_required(login_url='/login')
 def home(request):
-    presets = Preset.objects.all()
+    presets = Preset.objects.filter(author=request.user)
     characters = Character.objects.all()
     return render(request, 'accounts/home.html', {'presets': presets, 'characters': characters})
 

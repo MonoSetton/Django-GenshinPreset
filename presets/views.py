@@ -12,12 +12,15 @@ def update_art(request, pk):
                                                                     'status',), extra=5, can_delete=False, max_num=5)
     preset = Preset.objects.get(id=pk)
     formset = PresetFormSet(instance=preset)
-    if request.method == 'POST':
-        formset = PresetFormSet(request.POST, instance=preset)
-        if formset.is_valid():
-            formset.save()
-            return redirect('/details/'+pk)
-    return render(request, 'presets/update_art.html', {'formset': formset})
+    if preset.author == request.user:
+        if request.method == 'POST':
+            formset = PresetFormSet(request.POST, instance=preset)
+            if formset.is_valid():
+                formset.save()
+                return redirect('/details/'+pk)
+        return render(request, 'presets/update_art.html', {'formset': formset})
+    else:
+        raise BadRequest("You do not have permission to see this site")
 
 
 @login_required(login_url='/login')
@@ -27,7 +30,7 @@ def details(request, pk):
     if preset.author == request.user:
         return render(request, 'presets/details.html', {'artifacts': artifacts, 'preset': preset})
     else:
-        raise BadRequest("You're not the author of this preset")
+        raise BadRequest("You do not have permission to see this site")
 
 
 @login_required(login_url='/login')
@@ -47,10 +50,13 @@ def create_preset(request):
 @login_required(login_url='/login')
 def delete_preset(request, pk):
     preset = Preset.objects.get(id=pk)
-    if request.method == 'POST':
-        preset.delete()
-        return redirect('/')
-    return render(request, 'presets/delete.html', {'preset': preset})
+    if preset.author == request.user:
+        if request.method == 'POST':
+            preset.delete()
+            return redirect('/')
+        return render(request, 'presets/delete.html', {'preset': preset})
+    else:
+        raise BadRequest("You do not have permission to see this site")
 
 
 @login_required(login_url='/login')

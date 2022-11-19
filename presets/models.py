@@ -30,3 +30,6 @@ class Artifact(models.Model):
     status = models.CharField(max_length=50, null=True, blank=True, choices=STATUS)
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
+    def __str__(self):
+        return self.set
+

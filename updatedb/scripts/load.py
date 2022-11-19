@@ -7,6 +7,20 @@ def pause():
     print("-"*70)
 
 
+def update_db(csv_file):
+    file = open(f'updatedb/scripts/csvs/{csv_file}.csv')
+    read_file = csv.reader(file)
+
+    return read_file
+
+
+def clear_data():
+    Character.objects.all().delete()
+    Artifact_set.objects.all().delete()
+    Weapon.objects.all().delete()
+    print("Deleted previous version of db")
+
+
 def get_weapons(url, weapon_type):
     df = pd.read_html(url)[1]
     df = df[['Name', 'Base ATK (Max)', '2nd Stat (Max)', 'Passive Ability']]
@@ -33,13 +47,6 @@ def get_artifacts(url):
     df.to_csv('updatedb/scripts/csvs/Artifacts.csv')
     print("Collecting artifacts - Done")
     pause()
-
-
-def update_db(csv_file):
-    file = open(f'updatedb/scripts/csvs/{csv_file}.csv')
-    read_file = csv.reader(file)
-
-    return read_file
 
 
 def update_characters():
@@ -95,13 +102,6 @@ def make_csv():
 
     get_artifacts("https://genshin-impact.fandom.com/wiki/Artifacts/Sets")
     print('Created csv files')
-
-
-def clear_data():
-    Character.objects.all().delete()
-    Artifact_set.objects.all().delete()
-    Weapon.objects.all().delete()
-    print("Deleted previous version of db")
 
 
 def run():

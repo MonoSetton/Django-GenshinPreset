@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-e706uvy^j9*_e+%-@y9da17@!s^7_^kvn@szu=0b128$0am8^a
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['genshin-presets.herokuapp.com', '127.0.0.1']
+ALLOWED_HOSTS = ['https://genshin-preset.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
@@ -88,10 +88,10 @@ WSGI_APPLICATION = 'genshinpreset.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'genshindb',
-        'USER': 'postgres',
-        'PASSWORD': 'KurusoXCV792',
-        'HOST': 'localhost',
+        'NAME': 'dauk5pi1c1js0a',
+        'USER': 'msodtihplragyy',
+        'PASSWORD': '5829c9f9b766595268a648e0f6ddaa6bc2785ba288da3b311e4a6ed90042d910',
+        'HOST': 'ec2-54-228-218-84.eu-west-1.compute.amazonaws.com',
         'PORT': '5432',
     }
 }

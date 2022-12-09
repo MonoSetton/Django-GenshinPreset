@@ -7,22 +7,32 @@ def pause():
     print("-"*70)
 
 
-def update_db(csv_file):
-    file = open(f'updatedb/scripts/csvs/{csv_file}.csv')
-    read_file = csv.reader(file)
-
-    return read_file
-
-
+# Don't need it but I'll leave it for later
 def clear_data():
     Character.objects.all().delete()
     Artifact_set.objects.all().delete()
     Weapon.objects.all().delete()
     print("Deleted previous version of db")
+    pause()
+
+
+def read_csv_file(csv_file):
+    file = open(f'updatedb/scripts/csvs/{csv_file}.csv')
+    read_file = csv.reader(file)
+    return read_file
+
+
+def get_table(df, filter):
+    for table in df:
+        if filter in table:
+            df = table
+            break
+    return df
 
 
 def get_weapons(url, weapon_type):
-    df = pd.read_html(url)[1]
+    df = pd.read_html(url)
+    df = get_table(df, 'Base ATK (Max)')
     df = df[['Name', 'Base ATK (Max)', '2nd Stat (Max)', 'Passive Ability']]
     df.to_csv(f'updatedb/scripts/csvs/{weapon_type}.csv')
     print(f"Getting {weapon_type}s - Done")
@@ -30,7 +40,8 @@ def get_weapons(url, weapon_type):
 
 
 def get_characters(url):
-    df = pd.read_html(url)[2]
+    df = pd.read_html(url)
+    df = get_table(df, 'Element')
     df = df[['Name', 'Weapon', 'Element']]
     df.to_csv('updatedb/scripts/csvs/Character.csv')
     print("Collecting characters - Done")
@@ -38,7 +49,8 @@ def get_characters(url):
 
 
 def get_artifacts(url):
-    df = pd.read_html(url)[1]
+    df = pd.read_html(url)
+    df = get_table(df, 'Rarity')
     df = df.loc[df['Rarity'] == "4-5★"]
     df[['2 Piece', '4 Piece']] = df.Bonuses.str.split('4 Piece:', expand=True)
     df = df[['Set', '2 Piece', '4 Piece']]
@@ -50,7 +62,7 @@ def get_artifacts(url):
 
 
 def update_characters():
-    read_file = update_db("Character")
+    read_file = read_csv_file("Character")
 
     count = 1
 
@@ -64,7 +76,7 @@ def update_characters():
 
 
 def update_artifacts():
-    read_file = update_db("Artifacts")
+    read_file = read_csv_file("Artifacts")
 
     count = 1
 
@@ -78,7 +90,7 @@ def update_artifacts():
 
 
 def update_weapons(csv_file):
-    read_file = update_db(csv_file)
+    read_file = read_csv_file(csv_file)
 
     count = 1
 
@@ -105,8 +117,7 @@ def make_csv():
 
 
 def run():
-    clear_data()
-    pause()
+    # clear_data()
     make_csv()
     update_characters()
     update_artifacts()

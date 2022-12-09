@@ -26,7 +26,6 @@ class Weapon(models.Model):
     stat = models.CharField(max_length=50)
     ability = models.TextField()
 
-
     def __str__(self):
         return self.name
 

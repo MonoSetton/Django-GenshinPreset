@@ -3,14 +3,16 @@ from .forms import RegisterForm
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from presets.models import Preset
-from updatedb.models import Character
 
 
 @login_required(login_url='/login')
 def home(request):
     presets = Preset.objects.filter(author=request.user)
-    characters = Character.objects.all()
+    characters = set()
+    for preset in presets:
+        characters.add(preset.character)
     return render(request, 'accounts/home.html', {'presets': presets, 'characters': characters})
+
 
 def sign_up(request):
     if request.method == 'POST':
@@ -23,3 +25,4 @@ def sign_up(request):
         form = RegisterForm()
 
     return render(request, 'registration/signup.html', {'form': form})
+

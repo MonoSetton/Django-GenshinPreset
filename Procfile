@@ -1,1 +1,1 @@
-web: gunicorn 'genshinpreset.wsgi'
+web: gunicorn genshinpreset.wsgi

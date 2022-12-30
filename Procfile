@@ -1,1 +1,0 @@
-web: gunicorn genshinpreset.wsgi --log-file -

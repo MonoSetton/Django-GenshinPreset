@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'genshinpreset.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'genshindb',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'KurusoXCV792',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'PASSWORD': 'rfi7tUjtNgs7GxStak0U',
+        'HOST': 'containers-us-west-148.railway.app',
+        'PORT': '5957',
     }
 }
 

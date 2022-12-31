@@ -29,6 +29,8 @@ ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
     'genshinpreset-production.up.railway.app',
+    'http://genshinpreset-production.up.railway.app',
+    'https://genshinpreset-production.up.railway.app'
 ]
 
 

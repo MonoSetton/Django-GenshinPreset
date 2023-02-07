@@ -1,62 +1,64 @@
 ,Name,Weapon,Element
 0,Albedo,Sword,Geo
-1,Aloy,Bow,Cryo
-2,Amber,Bow,Pyro
-3,Arataki Itto,Claymore,Geo
-4,Barbara,Catalyst,Hydro
-5,Beidou,Claymore,Electro
-6,Bennett,Sword,Pyro
-7,Candace,Polearm,Hydro
-8,Chongyun,Claymore,Cryo
-9,Collei,Bow,Dendro
-10,Cyno,Polearm,Electro
-11,Diluc,Claymore,Pyro
-12,Diona,Bow,Cryo
-13,Dori,Claymore,Electro
-14,Eula,Claymore,Cryo
-15,Faruzan,Bow,Anemo
-16,Fischl,Bow,Electro
-17,Ganyu,Bow,Cryo
-18,Gorou,Bow,Geo
-19,Hu Tao,Polearm,Pyro
-20,Jean,Sword,Anemo
-21,Kaedehara Kazuha,Sword,Anemo
-22,Kaeya,Sword,Cryo
-23,Kamisato Ayaka,Sword,Cryo
-24,Kamisato Ayato,Sword,Hydro
-25,Keqing,Sword,Electro
-26,Klee,Catalyst,Pyro
-27,Kujou Sara,Bow,Electro
-28,Kuki Shinobu,Sword,Electro
-29,Layla,Sword,Cryo
-30,Lisa,Catalyst,Electro
-31,Mona,Catalyst,Hydro
-32,Nahida,Catalyst,Dendro
-33,Nilou,Sword,Hydro
-34,Ningguang,Catalyst,Geo
-35,Noelle,Claymore,Geo
-36,Qiqi,Sword,Cryo
-37,Raiden Shogun,Polearm,Electro
-38,Razor,Claymore,Electro
-39,Rosaria,Polearm,Cryo
-40,Sangonomiya Kokomi,Catalyst,Hydro
-41,Sayu,Claymore,Anemo
-42,Shenhe,Polearm,Cryo
-43,Shikanoin Heizou,Catalyst,Anemo
-44,Sucrose,Catalyst,Anemo
-45,Tartaglia,Bow,Hydro
-46,Thoma,Polearm,Pyro
-47,Tighnari,Bow,Dendro
-48,Traveler,Sword,None
-49,Venti,Bow,Anemo
-50,Wanderer,Catalyst,Anemo
-51,Xiangling,Polearm,Pyro
-52,Xiao,Polearm,Anemo
-53,Xingqiu,Sword,Hydro
-54,Xinyan,Claymore,Pyro
-55,Yae Miko,Catalyst,Electro
-56,Yanfei,Catalyst,Pyro
-57,Yelan,Bow,Hydro
-58,Yoimiya,Bow,Pyro
-59,Yun Jin,Polearm,Geo
-60,Zhongli,Polearm,Geo
+1,Alhaitham,Sword,Dendro
+2,Aloy,Bow,Cryo
+3,Amber,Bow,Pyro
+4,Arataki Itto,Claymore,Geo
+5,Barbara,Catalyst,Hydro
+6,Beidou,Claymore,Electro
+7,Bennett,Sword,Pyro
+8,Candace,Polearm,Hydro
+9,Chongyun,Claymore,Cryo
+10,Collei,Bow,Dendro
+11,Cyno,Polearm,Electro
+12,Diluc,Claymore,Pyro
+13,Diona,Bow,Cryo
+14,Dori,Claymore,Electro
+15,Eula,Claymore,Cryo
+16,Faruzan,Bow,Anemo
+17,Fischl,Bow,Electro
+18,Ganyu,Bow,Cryo
+19,Gorou,Bow,Geo
+20,Hu Tao,Polearm,Pyro
+21,Jean,Sword,Anemo
+22,Kaedehara Kazuha,Sword,Anemo
+23,Kaeya,Sword,Cryo
+24,Kamisato Ayaka,Sword,Cryo
+25,Kamisato Ayato,Sword,Hydro
+26,Keqing,Sword,Electro
+27,Klee,Catalyst,Pyro
+28,Kujou Sara,Bow,Electro
+29,Kuki Shinobu,Sword,Electro
+30,Layla,Sword,Cryo
+31,Lisa,Catalyst,Electro
+32,Mona,Catalyst,Hydro
+33,Nahida,Catalyst,Dendro
+34,Nilou,Sword,Hydro
+35,Ningguang,Catalyst,Geo
+36,Noelle,Claymore,Geo
+37,Qiqi,Sword,Cryo
+38,Raiden Shogun,Polearm,Electro
+39,Razor,Claymore,Electro
+40,Rosaria,Polearm,Cryo
+41,Sangonomiya Kokomi,Catalyst,Hydro
+42,Sayu,Claymore,Anemo
+43,Shenhe,Polearm,Cryo
+44,Shikanoin Heizou,Catalyst,Anemo
+45,Sucrose,Catalyst,Anemo
+46,Tartaglia,Bow,Hydro
+47,Thoma,Polearm,Pyro
+48,Tighnari,Bow,Dendro
+49,Traveler,Sword,None
+50,Venti,Bow,Anemo
+51,Wanderer,Catalyst,Anemo
+52,Xiangling,Polearm,Pyro
+53,Xiao,Polearm,Anemo
+54,Xingqiu,Sword,Hydro
+55,Xinyan,Claymore,Pyro
+56,Yae Miko,Catalyst,Electro
+57,Yanfei,Catalyst,Pyro
+58,Yaoyao,Polearm,Dendro
+59,Yelan,Bow,Hydro
+60,Yoimiya,Bow,Pyro
+61,Yun Jin,Polearm,Geo
+62,Zhongli,Polearm,Geo

@@ -23,12 +23,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-e706uvy^j9*_e+%-@y9da17@!s^7_^kvn@szu=0b128$0am8^a'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
 CSRF_TRUSTED_ORIGINS = [
-    'genshinpreset-production.up.railway.app',
     'http://genshinpreset-production.up.railway.app',
     'https://genshinpreset-production.up.railway.app'
 ]
@@ -96,9 +95,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'IEegVoXfTdY22VKYXzK3',
-        'HOST': 'containers-us-west-139.railway.app',
-        'PORT': '6052',
+        'PASSWORD': 'kRvsBm9MPFDzhYkRof2d',
+        'HOST': 'containers-us-west-168.railway.app',
+        'PORT': '6635',
     }
 }
 

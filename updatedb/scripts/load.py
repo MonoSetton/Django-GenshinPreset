@@ -7,7 +7,6 @@ def pause():
     print("-"*70)
 
 
-# Don't need it but I'll leave it for later & it removes all data from db
 def clear_data():
     Character.objects.all().delete()
     Artifact_set.objects.all().delete()
@@ -117,7 +116,7 @@ def make_csv():
 
 
 def run():
-    # clear_data()
+    clear_data()
     make_csv()
     update_characters()
     update_artifacts()

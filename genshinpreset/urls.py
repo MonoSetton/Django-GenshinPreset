@@ -10,5 +10,6 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('', include('accounts.urls')),
     path('', include('presets.urls')),
+    path('api/', include('api.urls')),
     path('', include('django.contrib.auth.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -93,12 +93,8 @@ WSGI_APPLICATION = 'genshinpreset.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'F3CFcede3eGA52DbCgGE6CGcec4fCb1d',
-        'HOST': 'viaduct.proxy.rlwy.net',
-        'PORT': '32179',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 

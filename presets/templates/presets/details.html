@@ -29,8 +29,19 @@
                 <th>No stat provided</th>
             {% else %}
             <th>
-                <span data-toggle="tooltip" data-placement="top" title="{{ art.set.piece_2 }}">2 Piece</span><br />
                 {{ art.set }}<br />
+                <details>
+                    <summary>
+                        <span data-toggle="tooltip" data-placement="top">2 Piece</span>
+                    </summary>
+                        {{ art.set.piece_2 }}
+
+                    <summary>
+                        <span data-toggle="tooltip" data-placement="top"> Piece</span>
+                    </summary>
+                        {{ art.set.piece_4 }}
+                </details>
+
                 <span data-toggle="tooltip" data-placement="top" title="{{ art.set.piece_4 }}">4 Piece</span>
             </th>
           {% endif %}

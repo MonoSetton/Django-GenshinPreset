@@ -31,7 +31,7 @@ def get_table(df, filter):
 
 def get_weapons(url, weapon_type):
     df = pd.read_html(url)
-    df = get_table(df, 'Base ATK (Max)')
+    df = get_table(df, 'Base ATK (Lv. 1)')
     df = df[['Name', 'Base ATK (Max)', '2nd Stat (Max)', 'Passive Ability']]
     df.to_csv(f'updatedb/scripts/csvs/{weapon_type}.csv')
     print(f"Getting {weapon_type}s - Done")
